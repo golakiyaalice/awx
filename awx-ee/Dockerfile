@@ -1,6 +1,9 @@
 FROM quay.io/ansible/awx-ee:latest
 USER root
-RUN  yum update xz-libs -y
+
+RUN yum update -y 
+
+RUN yum update xz-libs -y
 RUN yum update subversion -y
 RUN yum update subversion-libs -y
 RUN yum update python3 -y
