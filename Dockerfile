@@ -11,3 +11,5 @@ RUN yum update subscription-manager-rhsm-certificates -y
 RUN dnf update python38-libs -y
 RUN dnf update python3-cloud-what -y
 RUN dnf update sqlite-libs -y
+RUN dnf update python3-libs -y
+RUN dnf update platform-python -y
