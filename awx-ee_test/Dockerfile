@@ -16,10 +16,9 @@ ARG EE_BASE_IMAGE
 RUN python3 -m ensurepip
 RUN python3 -m pip install --no-cache-dir ansible-core>=2.15
 
-RUN mkdir -p /opt/ansible/output/scripts/
-# COPY scripts/entrypoint /opt/builder/bin/entrypoint # buildkit
-RUN pwd
-COPY scripts/check_ansible /output/scripts/check_ansible # buildkit
+# RUN mkdir /opt/builder && mkdir -p /opt/ansible/output/scripts
+COPY scripts/entrypoint /opt/builder/bin/entrypoint
+COPY scripts/check_ansible /opt/ansible/check_ansible
 
 RUN python3 -m pip install -U pip
 
