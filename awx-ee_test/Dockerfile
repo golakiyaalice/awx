@@ -12,7 +12,8 @@ RUN python3 -m pip install ansible
 RUN pip install ansible-builder==1.0.0.0a1
 
 COPY files/requirements.yml ./
-RUN ansible-galaxy role install -r ./requirements.yml --roles-path /usr/share/ansible/roles
+RUN pwd && ls ./
+RUN ansible-galaxy collection install -r ./requirements.yml --collections-path /usr/share/ansible/collections
 
 COPY scripts/entrypoint /opt/builder/bin/entrypoint
 COPY scripts/check_ansible /output/scripts/check_ansible
