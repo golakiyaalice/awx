@@ -44,7 +44,7 @@ RUN yum install python3-libs -y
 RUN yum install libksba -y
 RUN yum install git-core -y
 RUN yum install vim-minimal -y
-RUN pip install certifi==2023.7.22
+#RUN pip install certifi==2023.7.22
 #Remediation steps complete
 
 USER 1000
