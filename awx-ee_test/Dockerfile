@@ -3,7 +3,7 @@ FROM registry.access.redhat.com/ubi8/ubi
 CMD ["/bin/bash"]
 USER root
 
-RUN yum install python3.8 -y
+RUN yum install python3.9 -y
 RUN python3 -m ensurepip
 RUN python3 -m pip install -U pip
 
@@ -35,15 +35,15 @@ CMD git lfs install --system
 CMD rm -rf /output
 
 #Remediation steps below
-RUN yum install xz-libs -y
+#RUN yum install xz-libs -y
 #RUN yum update subversion -y
 #RUN yum install subversion-libs -y
-RUN yum install python3 -y
-RUN yum install python3-libs -y
+#RUN yum install python3 -y
+#RUN yum install python3-libs -y
 #RUN yum install python-unversioned-command -y
-RUN yum install libksba -y
-RUN yum install git-core -y
-RUN yum install vim-minimal -y
+#RUN yum install libksba -y
+#RUN yum install git-core -y
+#RUN yum install vim-minimal -y
 #RUN pip install certifi==2023.7.22
 #Remediation steps complete
 
