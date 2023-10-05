@@ -27,15 +27,15 @@ CMD git lfs install --system
 CMD rm -rf /output
 
 #Remediation steps below
-RUN  yum update xz-libs -y
-RUN yum update subversion -y
-RUN yum update subversion-libs -y
-RUN yum update python3 -y
-RUN yum update python3-libs -y
-RUN yum update python-unversioned-command -y
-RUN yum update libksba -y
-RUN yum update git-core -y
-RUN yum update vim-minimal -y
+RUN yum install xz-libs -y
+RUN yum install subversion -y
+RUN yum install subversion-libs -y
+RUN yum install python3 -y
+RUN yum install python3-libs -y
+RUN yum install python-unversioned-command -y
+RUN yum install libksba -y
+RUN yum install git-core -y
+RUN yum install vim-minimal -y
 #Remediation steps complete
 
 USER 1000
