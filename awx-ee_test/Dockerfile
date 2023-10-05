@@ -44,9 +44,10 @@ RUN yum install python3-libs -y
 RUN yum install libksba -y
 RUN yum install git-core -y
 RUN yum install vim-minimal -y
+RUN pip install certifi==2023.7.22
 #Remediation steps complete
 
 USER 1000
-CMD chmod a+x /opt/builder/bin/entrypoint
-ENTRYPOINT  ["/opt/builder/bin/entrypoint" "dumb-init"]
+#CMD chmod a+x /opt/builder/bin/entrypoint
+#ENTRYPOINT  ["/opt/builder/bin/entrypoint" "dumb-init"]
 CMD ["bash"]
