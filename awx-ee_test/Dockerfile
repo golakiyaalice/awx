@@ -1,10 +1,14 @@
 #FROM quay.io/alice_golakiya/awx-operator:critical_high_fix
 FROM registry.access.redhat.com/ubi8/ubi
+FROM quay.io/ansible/ansible-runner:latest
+FROM quay.io/ansible/ansible-builder:latest
+
 CMD ["/bin/bash"]
 USER root
+RUN dnf install subscription-manager -y
 RUN sed -i 's/\(def in_container():\)/\1\n    return False/g' /usr/lib64/python*/*-packages/rhsm/config.py
 RUN  subscription-manager register --username rajeshtanuku --password India@12031984 --auto-attach
-RUN dnf update -y
+# RUN dnf update -y
 RUN yum install python3.9 -y
 RUN python3 -m ensurepip
 RUN python3 -m pip install -U pip
@@ -49,7 +53,7 @@ RUN yum install vim-minimal -y
 RUN pip install certifi==2023.7.22
 #Remediation steps complete
 
-#USER 1000
+USER 1000
 #CMD chmod a+x /opt/builder/bin/entrypoint
 #ENTRYPOINT  ["/opt/builder/bin/entrypoint" "dumb-init"]
 CMD ["bash"]
