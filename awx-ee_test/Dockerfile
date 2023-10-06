@@ -39,17 +39,17 @@ CMD rm -rf /output
 #RUN yum install xz-libs -y
 RUN yum install python38-devel -y
 RUN pip install svn
-#RUN yum install subversion-libs -y
+#RUN yum install svn-libs -y
 #RUN yum install python3 -y
-#RUN yum install python3-libs -y
-#RUN yum install python-unversioned-command -y
-#RUN yum install libksba -y
-#RUN yum install git-core -y
-#RUN yum install vim-minimal -y
-#RUN pip install certifi==2023.7.22
+RUN yum install python3-libs -y
+#RUN pip install python-unversioned-command
+RUN yum install libksba -y
+RUN yum install git-core -y
+RUN yum install vim-minimal -y
+RUN pip install certifi==2023.7.22
 #Remediation steps complete
 
-USER 1000
+#USER 1000
 #CMD chmod a+x /opt/builder/bin/entrypoint
 #ENTRYPOINT  ["/opt/builder/bin/entrypoint" "dumb-init"]
 CMD ["bash"]
